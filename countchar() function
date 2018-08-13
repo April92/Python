@@ -1,0 +1,8 @@
+def countchar(s):
+    lst = [0] * 26
+    for i in range(len(s)):
+        if s[i] >= 'a' and s[i] <='z':  
+            lst[ord(s[i])- ord('a')] += 1
+    print(lst)
+
+countchar('hello world')
