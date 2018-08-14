@@ -1,0 +1,67 @@
+>>> aDF
+    name    pay
+0  Mayue   3000
+1  Lilin   4500
+2  Wuyun   8000
+
+#add columns
+#Add a tax column into aDF.
+
+aDF['tax'] = [0.05, 0.05, 0.1]
+
+>>> aDF
+    name   pay   tax
+0  Mayue  3000  0.05
+1  Lilin  4500  0.05
+2  Wuyun  8000   0.1
+
+#add rows 
+
+aDF.loc[5] = {'name': 'Liuxi', 'pay': 5000, 'tax': 0.05}
+>>> aDF
+    name   pay   tax
+0  Mayue  3000  0.05
+1  Lilin  4500  0.05
+2  Wuyun  8000   0.1
+5  Liuxi  5000  0.05
+
+#delete data
+#Drop the row which label is 5
+aDF.drop(5)
+    name   pay   tax
+0  Mayue  3000  0.05
+1  Lilin  4500  0.05
+2  Wuyun  8000   0.1
+
+#Drop the tax column
+aDF.drop('tax', axis = 1)
+    name   pay
+0  Mayue  3000
+1  Lilin  4500
+2  Wuyun  8000
+5  Liuxi  5000
+>>> aDF
+    name   pay   tax
+0  Mayue  3000  0.05
+1  Lilin  4500  0.05
+2  Wuyun  8000   0.1
+5  Liuxi  5000  0.05
+
+#4. modify
+
+#modify the column
+>>> aDF['tax'] = 0.03
+>>> aDF
+    name   pay   tax
+0  Mayue  3000  0.03
+1  Lilin  4500  0.03
+2  Wuyun  8000  0.03
+5  Liuxi  5000  0.03
+
+#modify the row
+aDF.loc[5] = ['Liuxi', 9800, 0.05]
+    name   pay   tax
+0  Mayue  3000  0.03
+1  Lilin  4500  0.03
+2  Wuyun  8000  0.03
+5  Liuxi  9800  0.05
