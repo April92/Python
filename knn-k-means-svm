@@ -1,0 +1,30 @@
+# Use KNN classification algorithm for classification
+from sklearn import neighbors , datasets
+iris = datasets.load_iris()
+knn = neighbors.KNeighborsClassifier()
+# Learn from the existing data
+knn.fit(iris.data, iris.target)
+# Predict the unknown data using classification model (identify the tag)
+knn.predict([[5.0, 3.0, 5.0, 2.0]])
+
+# Use the k-means clustering algorithm to cluster
+from sklearn import cluster, datasets
+iris = datasets.load_iris()
+kmeans = cluster.KMeans(n_clusters = 3).fit(iris.data)
+# Determine the data types
+pred = kmeans.predict(iris.data)
+# Print out the label of each data entry that has been predicted
+for label in pred:
+    print(label, end = ' ')
+# Print out the correct labels that are originally marked.
+for label in iris.target:
+    print(label, end = ' ')    
+# Compare the accuracy of the algorithm
+
+
+#SVM
+from sklearn import svm, datasets
+iris = datasets.load_iris()
+svc = svm.LinearSVC()
+svc.fit(iris.data, iris.target) # Learn
+svc.predict([[ 5.0, 3.0, 5.0, 2.0]])  # Predict
